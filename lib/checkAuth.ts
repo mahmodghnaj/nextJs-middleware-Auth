@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 
 const checkAuth = async (request: NextRequest) => {
   const tokenCookie = request.cookies.get("token");
+  console.log(tokenCookie, "sssss");
   if (tokenCookie) {
     try {
       const loginRequest = await fetch(`${process.env.BASE_URL}/api/auth`, {
